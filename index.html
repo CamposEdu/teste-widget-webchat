@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teste Widget WebChat</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #1d2433;
+      --muted: #5b6475;
+      --brand: #2f6bff;
+      --brand-dark: #1f4fd1;
+      --border: #e3e6ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header strong { font-size: 18px; }
+    main { max-width: 880px; margin: 0 auto; padding: 48px 16px; }
+    .hero h1 { font-size: 36px; margin: 0 0 12px; }
+    .hero p { color: var(--muted); font-size: 18px; margin: 0 0 28px; }
+    .h-widget-trigger {
+      background: var(--brand);
+      color: #fff;
+      border: 0;
+      border-radius: 8px;
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .h-widget-trigger:hover { background: var(--brand-dark); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card h3 { margin: 0 0 8px; }
+    .card p { margin: 0; color: var(--muted); }
+    .status {
+      margin-top: 48px;
+      font-size: 14px;
+      color: var(--muted);
+      background: var(--card);
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+    .status code { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Loja Exemplo</strong>
+    <button type="button" class="h-widget-trigger">Entrar em contato</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Página de teste do WebChat</h1>
+      <p>Site fictício para validar o widget de atendimento. Clique em um dos botões para abrir o chat.</p>
+      <button type="button" class="h-widget-trigger">Entrar em contato</button>
+    </section>
+
+    <section class="grid">
+      <div class="card"><h3>Produto A</h3><p>Descrição de exemplo para simular uma página real.</p></div>
+      <div class="card"><h3>Produto B</h3><p>Descrição de exemplo para simular uma página real.</p></div>
+      <div class="card"><h3>Produto C</h3><p>Descrição de exemplo para simular uma página real.</p></div>
+    </section>
+
+    <div class="status">
+      Widget: <code>teste-mental-one-833cde</code> · Script: <span id="script-status">carregando…</span>
+    </div>
+  </main>
+
+  <script
+    type="application/javascript"
+    src="https://cdn.wts.chat/scripts/widget/v3/h-widget-min.js"
+    data-widget="teste-mental-one-833cde"
+    onload="document.getElementById('script-status').textContent = 'carregado ✔'"
+    onerror="document.getElementById('script-status').textContent = 'falhou ao carregar ✖'"
+  ></script>
+</body>
+</html>
